@@ -1,3 +1,6 @@
 node_modules
 dist
 raceiq-analysis
+
+# Rust build artifacts (includes test output)
+src-tauri/target/
