@@ -1,0 +1,10 @@
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/alloc_no_stdlib-49a830785d802f2c.d: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_memory/mod.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_memory/index_macro.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/stack_allocator.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_stack_memory.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/init.rs
+
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/liballoc_no_stdlib-49a830785d802f2c.rmeta: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_memory/mod.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_memory/index_macro.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/stack_allocator.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_stack_memory.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/init.rs
+
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/lib.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_memory/mod.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_memory/index_macro.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/stack_allocator.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/allocated_stack_memory.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/alloc-no-stdlib-3.0.0/src/init.rs:

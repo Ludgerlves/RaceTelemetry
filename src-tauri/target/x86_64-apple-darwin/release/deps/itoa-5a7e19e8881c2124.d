@@ -1,0 +1,8 @@
+/Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/deps/itoa-5a7e19e8881c2124.d: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itoa-1.0.19/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itoa-1.0.19/src/u128_ext.rs
+
+/Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/deps/libitoa-5a7e19e8881c2124.rlib: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itoa-1.0.19/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itoa-1.0.19/src/u128_ext.rs
+
+/Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/deps/libitoa-5a7e19e8881c2124.rmeta: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itoa-1.0.19/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itoa-1.0.19/src/u128_ext.rs
+
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itoa-1.0.19/src/lib.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itoa-1.0.19/src/u128_ext.rs:

@@ -1,0 +1,13 @@
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/window_vibrancy-8973151dee2d057b.d: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/mod.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/vibrancy.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/ns_visual_effect_view_tagged.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/liquid_glass.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/ns_glass_effect_view_tagged.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/windows.rs
+
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/libwindow_vibrancy-8973151dee2d057b.rmeta: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/mod.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/vibrancy.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/ns_visual_effect_view_tagged.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/liquid_glass.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/ns_glass_effect_view_tagged.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/windows.rs
+
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/lib.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/mod.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/vibrancy.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/ns_visual_effect_view_tagged.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/liquid_glass.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/macos/ns_glass_effect_view_tagged.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/window-vibrancy-0.8.1/src/windows.rs:
+
+# env-dep:CARGO_PKG_VERSION=0.8.1

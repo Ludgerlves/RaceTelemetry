@@ -1,0 +1,10 @@
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/crc32fast-eb7e09f50bb13c03.d: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/baseline.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/combine.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/specialized/mod.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/table.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/specialized/pclmulqdq.rs
+
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/libcrc32fast-eb7e09f50bb13c03.rmeta: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/baseline.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/combine.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/specialized/mod.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/table.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/specialized/pclmulqdq.rs
+
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/lib.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/baseline.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/combine.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/specialized/mod.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/table.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crc32fast-1.5.4/src/specialized/pclmulqdq.rs:

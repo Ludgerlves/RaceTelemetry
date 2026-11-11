@@ -1,0 +1,11 @@
+/Users/mac/F1Telemetry/src-tauri/target/release/deps/tauri_build-520af4a8d1bf07e6.d: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/acl.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/manifest.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/mobile.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/windows-app-manifest.xml
+
+/Users/mac/F1Telemetry/src-tauri/target/release/deps/libtauri_build-520af4a8d1bf07e6.rlib: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/acl.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/manifest.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/mobile.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/windows-app-manifest.xml
+
+/Users/mac/F1Telemetry/src-tauri/target/release/deps/libtauri_build-520af4a8d1bf07e6.rmeta: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/acl.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/manifest.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/mobile.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/windows-app-manifest.xml
+
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/lib.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/acl.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/manifest.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/mobile.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-build-2.7.4/src/windows-app-manifest.xml:

@@ -1,0 +1,14 @@
+/Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/deps/thiserror-c01e1e5d03f8245a.d: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/aserror.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/display.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/var.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/private.rs /Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/build/thiserror-d2e001640d564613/out/private.rs
+
+/Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/deps/libthiserror-c01e1e5d03f8245a.rlib: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/aserror.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/display.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/var.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/private.rs /Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/build/thiserror-d2e001640d564613/out/private.rs
+
+/Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/deps/libthiserror-c01e1e5d03f8245a.rmeta: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/aserror.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/display.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/var.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/private.rs /Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/build/thiserror-d2e001640d564613/out/private.rs
+
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/lib.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/aserror.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/display.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/var.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.21/src/private.rs:
+/Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/build/thiserror-d2e001640d564613/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/mac/F1Telemetry/src-tauri/target/x86_64-apple-darwin/release/build/thiserror-d2e001640d564613/out

@@ -1,0 +1,25 @@
+/Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/deps/f1_telemetry-bf9862c26b5bf620.d: src/main.rs src/commands.rs src/telemetry/mod.rs src/telemetry/packets.rs src/telemetry/parser.rs src/telemetry/udp_listener.rs src/telemetry/broadcaster.rs /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/a0e1f6684d58d6169eb265d32ad9a349ad32e9db543b9bcd8cecb1357d9d72c3 /Users/mac/F1Telemetry/src-tauri/../dist/assets/index-Cy4wVEPG.js /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/92eec900ef77a4d111a8bd9dac2002b39f9b2bb4fdb6e05c8f36d0e7fe7da6f1.js /Users/mac/F1Telemetry/src-tauri/../dist/assets/index-DC3ktr7R.css /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/d4fb54881265121e6651e835b7cc8e8cdd0a35e42e4ed3a7d4236c221a4dfb48.css /Users/mac/F1Telemetry/src-tauri/../dist/index.html /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/6d0be330a1aa98cc0467cbad945a5dc144abdd007b75614f5cdd9450623a70f3.html /Users/mac/F1Telemetry/src-tauri/../dist/favicon.svg /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/eff7ea1973d441b816361c8eced4f27ed7677e764be7d65bd6e577be35c90cbd.svg
+
+/Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/deps/f1_telemetry-bf9862c26b5bf620: src/main.rs src/commands.rs src/telemetry/mod.rs src/telemetry/packets.rs src/telemetry/parser.rs src/telemetry/udp_listener.rs src/telemetry/broadcaster.rs /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/a0e1f6684d58d6169eb265d32ad9a349ad32e9db543b9bcd8cecb1357d9d72c3 /Users/mac/F1Telemetry/src-tauri/../dist/assets/index-Cy4wVEPG.js /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/92eec900ef77a4d111a8bd9dac2002b39f9b2bb4fdb6e05c8f36d0e7fe7da6f1.js /Users/mac/F1Telemetry/src-tauri/../dist/assets/index-DC3ktr7R.css /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/d4fb54881265121e6651e835b7cc8e8cdd0a35e42e4ed3a7d4236c221a4dfb48.css /Users/mac/F1Telemetry/src-tauri/../dist/index.html /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/6d0be330a1aa98cc0467cbad945a5dc144abdd007b75614f5cdd9450623a70f3.html /Users/mac/F1Telemetry/src-tauri/../dist/favicon.svg /Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/eff7ea1973d441b816361c8eced4f27ed7677e764be7d65bd6e577be35c90cbd.svg
+
+src/main.rs:
+src/commands.rs:
+src/telemetry/mod.rs:
+src/telemetry/packets.rs:
+src/telemetry/parser.rs:
+src/telemetry/udp_listener.rs:
+src/telemetry/broadcaster.rs:
+/Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/a0e1f6684d58d6169eb265d32ad9a349ad32e9db543b9bcd8cecb1357d9d72c3:
+/Users/mac/F1Telemetry/src-tauri/../dist/assets/index-Cy4wVEPG.js:
+/Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/92eec900ef77a4d111a8bd9dac2002b39f9b2bb4fdb6e05c8f36d0e7fe7da6f1.js:
+/Users/mac/F1Telemetry/src-tauri/../dist/assets/index-DC3ktr7R.css:
+/Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/d4fb54881265121e6651e835b7cc8e8cdd0a35e42e4ed3a7d4236c221a4dfb48.css:
+/Users/mac/F1Telemetry/src-tauri/../dist/index.html:
+/Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/6d0be330a1aa98cc0467cbad945a5dc144abdd007b75614f5cdd9450623a70f3.html:
+/Users/mac/F1Telemetry/src-tauri/../dist/favicon.svg:
+/Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out/tauri-codegen-assets/eff7ea1973d441b816361c8eced4f27ed7677e764be7d65bd6e577be35c90cbd.svg:
+
+# env-dep:CARGO_PKG_AUTHORS=
+# env-dep:CARGO_PKG_DESCRIPTION=F1 2025 Telemetry Monitor
+# env-dep:CARGO_PKG_NAME=f1-telemetry
+# env-dep:OUT_DIR=/Users/mac/F1Telemetry/src-tauri/target/aarch64-apple-darwin/release/build/f1-telemetry-2e2fd0910a218f85/out

@@ -1,0 +1,11 @@
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/tauri_plugin_fs-bb40ace7a005838f.d: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/commands.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/config.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/desktop.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/error.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/file_path.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/scope.rs
+
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/libtauri_plugin_fs-bb40ace7a005838f.rmeta: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/commands.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/config.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/desktop.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/error.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/file_path.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/scope.rs
+
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/lib.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/commands.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/config.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/desktop.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/error.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/file_path.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-fs-2.7.1/src/scope.rs:

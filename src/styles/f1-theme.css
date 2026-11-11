@@ -1,0 +1,835 @@
+/* F1 Engineer Style Theme */
+
+:root {
+    /* Base Colors */
+    --color-background: #0a0a0a;
+    --color-panel: #141414;
+    --color-panel-dark: #1a1a1a;
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #a0a0a0;
+
+    /* F1 Accent */
+    --color-accent-red: #e10600;
+    --color-accent-white: #ffffff;
+
+    /* Gauge Zones */
+    --color-zone-green: #00ff00;
+    --color-zone-yellow: #ffff00;
+    --color-zone-red: #ff0000;
+
+    /* Tyre Compound Colors */
+    --tyre-c0: #ffffff;
+    --tyre-c1: #fff200;
+    --tyre-c2: #ff3333;
+    --tyre-c3: #ff00ff;
+    --tyre-c4: #ff6600;
+    --tyre-c5: #ff0099;
+    --tyre-c6: #cc00ff;
+    --tyre-inter: #00cc66;
+    --tyre-wet: #0099ff;
+}
+
+/* Dark mode is the default theme, but ensure base applies */
+:root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --color-background: #0a0a0a;
+    --color-panel: #141414;
+    --color-panel-dark: #1a1a1a;
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #a0a0a0;
+}
+
+/* Light theme fallback (optional, but good practice) */
+[data-theme="light"] {
+    --color-background: #f0f0f0;
+    --color-panel: #ffffff;
+    --color-panel-dark: #e0e0e0;
+    --color-text-primary: #111111;
+    --color-text-secondary: #555555;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: monospace, sans-serif; /* Engineering style font */
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbar */
+}
+
+/* Global container styles for the dashboard */
+#root {
+    display: grid;
+    grid-template-rows: 40px 1fr; /* Header and main content */
+    height: 100%;
+}
+
+header {
+    background-color: var(--color-panel-dark);
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-panel);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Dashboard Grid Layout */
+.f1-dashboard {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr; /* Left | Center (wide) | Right */
+    grid-template-rows: auto auto 1fr auto auto; /* Gauges | Tyres | Timing | CarStatus/Session | Settings */
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    min-height: 0; /* Allow grid to scroll */
+}
+
+/* Grid Area Assignments */
+.f1-dashboard__gauges {
+    grid-column: 1 / -1; /* Span all 3 columns */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.f1-dashboard__tyres {
+    grid-column: 1 / -1; /* Span all 3 columns */
+}
+
+.f1-dashboard__lap-timing {
+    grid-column: 2; /* Center column (wide) */
+    grid-row: 3;
+}
+
+.f1-dashboard__car-status {
+    grid-column: 3; /* Right column */
+    grid-row: 3 / 5; /* Span timing + session rows */
+}
+
+.f1-dashboard__session-info {
+    grid-column: 1; /* Left column */
+    grid-row: 3 / 5; /* Span timing + session rows */
+}
+
+.f1-dashboard__settings {
+    grid-column: 1 / -1; /* Span all columns */
+    grid-row: 5;
+}
+
+/* Card Styles */
+.telemetry-card, .timing-card, .status-card, .tyre-set, .gauge-container {
+    background-color: var(--color-panel);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* Tyre Set Specific */
+.tyre-set {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+.tyre-card {
+    width: 100%;
+    text-align: center;
+}
+
+/* Tyre Sets Panel */
+.tyre-set-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Suspension Card */
+.suspension-card {
+    min-height: 0;
+}
+
+/* Gauge Container */
+.gauge-container {
+    height: 180px; /* Fixed height for gauges */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    color: var(--color-text-secondary);
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--color-accent-white);
+}
+.f1-red-accent {
+    color: var(--color-accent-red);
+}
+.f1-green-accent {
+    color: var(--color-zone-green);
+}
+
+/* Topbar styles (from App.tsx) */
+.f1-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    grid-row: 1 / -1;  /* Span all grid rows of #root */
+}
+
+.f1-topbar {
+    background-color: var(--color-panel-dark);
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-panel);
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.f1-topbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.f1-topbar__logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-accent-red);
+    font-family: monospace;
+}
+
+.f1-topbar__title {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.f1-topbar__subtitle {
+    font-size: 0.75em;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.f1-topbar__status {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.f1-status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.f1-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.f1-status-dot--connected {
+    background-color: var(--color-zone-green);
+    box-shadow: 0 0 8px var(--color-zone-green);
+}
+.f1-status-dot--disconnected {
+    background-color: var(--color-zone-red);
+}
+
+.f1-status-label {
+    font-size: 0.7em;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.f1-status-value {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-family: monospace;
+}
+
+/* View toggle buttons (Live / History) */
+.f1-status-item--view {
+    display: flex;
+    gap: 4px;
+    border-left: 1px solid var(--color-panel);
+    padding-left: 16px;
+    margin-left: 16px;
+}
+
+.f1-view-btn {
+    background: transparent;
+    border: 1px solid var(--color-panel);
+    color: var(--color-text-secondary);
+    padding: 4px 10px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.f1-view-btn:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-text-secondary);
+}
+
+.f1-view-btn--active {
+    background: var(--color-accent-red);
+    color: var(--color-text-primary);
+    border-color: var(--color-accent-red);
+}
+
+/* Main content area */
+.f1-main {
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* ============================================================================
+   F1 SETTINGS PANEL - DESIGN TOKENS & COMPONENT STYLES
+   ============================================================================ */
+
+:root {
+  /* F1 Design Tokens for Settings Panel */
+  --f1-border: #2a2a2a;
+  --f1-bg-secondary: #1a1a1a;
+  --f1-bg-tertiary: #1e1e1e;
+  --f1-white: #ffffff;
+  --f1-white-muted: #888888;
+  --f1-black: #000000;
+  --f1-green-sector: #00d63a;
+  --f1-red: #e10600;
+  --f1-amber: #ffb800;
+
+  /* Spacing Scale */
+  --gap-xs: 4px;
+  --gap-sm: 8px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+  --gap-xl: 32px;
+
+  /* Border Radius Scale */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Input Styles */
+  --f1-input-bg: #0d0d0d;
+  --f1-input-border: #333333;
+  --f1-input-border-focus: var(--f1-green-sector);
+  --f1-input-text: var(--f1-white);
+  --f1-input-placeholder: #555555;
+
+  /* Button Variants */
+  --f1-btn-primary-bg: var(--f1-red);
+  --f1-btn-primary-hover: #ff1a1a;
+  --f1-btn-primary-text: var(--f1-white);
+  --f1-btn-secondary-bg: #2a2a2a;
+  --f1-btn-secondary-hover: #333333;
+  --f1-btn-secondary-text: var(--f1-white);
+  --f1-btn-danger-bg: #8b0000;
+  --f1-btn-danger-hover: #a50000;
+  --f1-btn-danger-text: var(--f1-white);
+  --f1-btn-disabled-opacity: 0.5;
+
+  /* Select Styles */
+  --f1-select-bg: var(--f1-input-bg);
+  --f1-select-border: var(--f1-input-border);
+
+  /* Checkbox */
+  --f1-checkbox-size: 18px;
+  --f1-checkbox-bg: var(--f1-input-bg);
+  --f1-checkbox-border: var(--f1-input-border);
+  --f1-checkbox-checked-bg: var(--f1-green-sector);
+}
+
+/* Light theme overrides for settings tokens */
+[data-theme="light"] {
+  --f1-border: #ddd;
+  --f1-bg-secondary: #f5f5f5;
+  --f1-bg-tertiary: #eeeeee;
+  --f1-white: #111111;
+  --f1-white-muted: #666666;
+  --f1-black: #ffffff;
+  --f1-green-sector: #00a82d;
+  --f1-red: #c00000;
+  --f1-amber: #cc9200;
+  --f1-input-bg: #ffffff;
+  --f1-input-border: #cccccc;
+  --f1-input-text: #111111;
+  --f1-input-placeholder: #999999;
+  --f1-btn-primary-bg: var(--f1-red);
+  --f1-btn-primary-hover: #e00000;
+  --f1-btn-secondary-bg: #eeeeee;
+  --f1-btn-secondary-hover: #dddddd;
+  --f1-btn-secondary-text: #111111;
+  --f1-btn-danger-bg: #a00000;
+  --f1-btn-danger-hover: #c00000;
+  --f1-checkbox-bg: #ffffff;
+  --f1-checkbox-border: #cccccc;
+}
+
+/* ============================================================================
+   CARD SYSTEM
+   ============================================================================ */
+
+.f1-card {
+  background: var(--color-panel);
+  border: 1px solid var(--f1-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.f1-card__header {
+  padding: var(--gap-md) var(--gap-lg);
+  border-bottom: 1px solid var(--f1-border);
+  background: var(--color-panel-dark);
+}
+
+.f1-card__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--f1-white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-sans);
+}
+
+.f1-card__body {
+  padding: var(--gap-lg);
+}
+
+/* ============================================================================
+   SETTINGS PANEL LAYOUT
+   ============================================================================ */
+
+.f1-settings {
+  max-width: 720px;
+  width: 100%;
+}
+
+.f1-settings-group {
+  margin-bottom: var(--gap-lg);
+}
+
+.f1-settings-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.f1-settings-group-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--f1-white-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--gap-md);
+  font-family: var(--font-sans);
+}
+
+/* Settings Grid - responsive 2-column layout */
+.f1-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-md);
+}
+
+@media (max-width: 600px) {
+  .f1-settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Setting Row */
+.f1-setting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.f1-setting-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--f1-white-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-sans);
+}
+
+/* Helper text under fields */
+.f1-setting-hint {
+  font-size: 11px;
+  color: var(--f1-white-muted);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* ============================================================================
+   FORM INPUTS
+   ============================================================================ */
+
+.f1-input,
+.f1-select {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--f1-input-bg);
+  border: 1px solid var(--f1-input-border);
+  border-radius: var(--radius-md);
+  color: var(--f1-input-text);
+  font-size: 14px;
+  font-family: var(--font-mono);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.f1-input:focus,
+.f1-select:focus {
+  outline: none;
+  border-color: var(--f1-input-border-focus);
+  box-shadow: 0 0 0 2px rgba(0, 214, 58, 0.2);
+}
+
+.f1-input::placeholder {
+  color: var(--f1-input-placeholder);
+}
+
+.f1-input:disabled,
+.f1-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.f1-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.f1-select option {
+  background: var(--color-panel);
+  color: var(--f1-white);
+}
+
+/* ============================================================================
+   READ-ONLY VALUE DISPLAY
+   ============================================================================ */
+
+.f1-value {
+  padding: 10px 12px;
+  background: var(--f1-bg-secondary);
+  border: 1px solid var(--f1-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--f1-white);
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ============================================================================
+   CHECKBOX
+   ============================================================================ */
+
+.f1-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  cursor: pointer;
+  padding: var(--gap-xs) 0;
+  user-select: none;
+}
+
+.f1-checkbox input[type="checkbox"] {
+  width: var(--f1-checkbox-size);
+  height: var(--f1-checkbox-size);
+  appearance: none;
+  background: var(--f1-checkbox-bg);
+  border: 2px solid var(--f1-checkbox-border);
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.f1-checkbox input[type="checkbox"]:hover {
+  border-color: var(--f1-green-sector);
+}
+
+.f1-checkbox input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 214, 58, 0.3);
+}
+
+.f1-checkbox input[type="checkbox"]:checked {
+  background: var(--f1-checkbox-checked-bg);
+  border-color: var(--f1-checkbox-checked-bg);
+}
+
+.f1-checkbox input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--f1-black);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.f1-checkbox span {
+  font-size: 13px;
+  color: var(--f1-white);
+  font-family: var(--font-sans);
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+.f1-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-sm);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.f1-btn:disabled {
+  opacity: var(--f1-btn-disabled-opacity);
+  cursor: not-allowed;
+}
+
+.f1-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 214, 58, 0.4);
+}
+
+.f1-btn--primary {
+  background: var(--f1-btn-primary-bg);
+  color: var(--f1-btn-primary-text);
+}
+
+.f1-btn--primary:hover:not(:disabled) {
+  background: var(--f1-btn-primary-hover);
+}
+
+.f1-btn--secondary {
+  background: var(--f1-btn-secondary-bg);
+  color: var(--f1-btn-secondary-text);
+  border: 1px solid var(--f1-border);
+}
+
+.f1-btn--secondary:hover:not(:disabled) {
+  background: var(--f1-btn-secondary-hover);
+}
+
+.f1-btn--danger {
+  background: var(--f1-btn-danger-bg);
+  color: var(--f1-btn-danger-text);
+}
+
+.f1-btn--danger:hover:not(:disabled) {
+  background: var(--f1-btn-danger-hover);
+}
+
+/* Small button variant */
+.f1-btn--sm {
+  padding: 6px 12px;
+  font-size: 11px;
+}
+
+/* ============================================================================
+   ACTIONS CONTAINER
+   ============================================================================ */
+
+.f1-settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-md);
+  padding-top: var(--gap-lg);
+  margin-top: var(--gap-lg);
+  border-top: 1px solid var(--f1-border);
+}
+
+/* ============================================================================
+   SAVED TOAST
+   ============================================================================ */
+
+.f1-saved-toast {
+  margin-left: var(--gap-md);
+  padding: 6px 12px;
+  background: var(--f1-green-sector);
+  color: var(--f1-black);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  animation: fadeInOut 2s ease forwards;
+  white-space: nowrap;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-4px); }
+  15% { opacity: 1; transform: translateY(0); }
+  85% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .f1-saved-toast {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ============================================================================
+   IP ADDRESS CARD (for local IPs display)
+   ============================================================================ */
+
+.f1-ip-card {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  padding: var(--gap-sm) var(--gap-md);
+  background: var(--f1-bg-secondary);
+  border: 1px solid var(--f1-border);
+  border-radius: var(--radius-sm);
+  min-width: 180px;
+  flex-wrap: wrap;
+}
+
+.f1-ip-card code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--f1-white);
+  flex: 1;
+  min-width: 120px;
+}
+
+/* ============================================================================
+   SECTION CARD (for F1 Game Telemetry Setup sections)
+   ============================================================================ */
+
+.f1-section-card {
+  padding: var(--gap-md);
+  background: var(--f1-bg-tertiary);
+  border: 1px solid var(--f1-border);
+  border-radius: var(--radius-md);
+}
+
+.f1-section-card + .f1-section-card {
+  margin-top: var(--gap-md);
+}
+
+/* ============================================================================
+   STATUS BADGE
+   ============================================================================ */
+
+.f1-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  background: var(--f1-green-sector);
+  color: var(--f1-black);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: bold;
+  font-family: var(--font-sans);
+}
+
+.f1-status-badge--inactive {
+  background: var(--f1-red);
+  color: var(--f1-white);
+}
+
+/* ============================================================================
+   INPUT GROUP (for IP + Port combined)
+   ============================================================================ */
+
+.f1-input-group {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.f1-input-group .f1-input {
+  flex: 1;
+}
+
+.f1-input-group .f1-input:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.f1-input-group .f1-input:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+/* ============================================================================
+   INVALID STATE
+   ============================================================================ */
+
+.f1-input--invalid,
+.f1-select--invalid {
+  border-color: var(--f1-red) !important;
+  box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.2) !important;
+}
+
+/* ============================================================================
+   REDUCED MOTION
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .f1-input,
+  .f1-select,
+  .f1-btn,
+  .f1-checkbox input[type="checkbox"],
+  .f1-saved-toast {
+    transition: none !important;
+    animation: none !important;
+  }
+}

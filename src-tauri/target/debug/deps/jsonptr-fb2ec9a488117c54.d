@@ -1,0 +1,17 @@
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/jsonptr-fb2ec9a488117c54.d: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/assign.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/delete.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/resolve.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/diagnostic.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/pointer.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/pointer/slice.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/token.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/index.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/component.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/../README.md
+
+/Users/mac/F1Telemetry/src-tauri/target/debug/deps/libjsonptr-fb2ec9a488117c54.rmeta: /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/lib.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/assign.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/delete.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/resolve.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/diagnostic.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/pointer.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/pointer/slice.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/token.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/index.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/component.rs /Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/../README.md
+
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/lib.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/assign.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/delete.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/resolve.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/diagnostic.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/pointer.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/pointer/slice.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/token.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/index.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/component.rs:
+/Users/mac/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonptr-0.7.1/src/../README.md:
+
+# env-dep:CARGO_PKG_VERSION=0.7.1
