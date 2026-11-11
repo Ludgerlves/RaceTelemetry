@@ -93,6 +93,7 @@ export interface SessionStateFrontend {
     lapHistory: LapHistoryEntry[];
     isNewSession: boolean;
     activeDriverIndex: number;
+    activeGame: string | null;
     sessionStartedAt: number | null;
 }
 

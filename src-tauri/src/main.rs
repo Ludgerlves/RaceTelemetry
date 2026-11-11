@@ -9,6 +9,9 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             commands::start_telemetry,
             commands::stop_telemetry,
+            commands::start_shared_memory,
+            commands::stop_shared_memory,
+            commands::is_shared_memory_running,
             commands::get_session_info,
             commands::export_session,
             commands::get_available_drivers,

@@ -4,6 +4,7 @@
 use crate::telemetry::game_detection::{GameId, GameRegistry};
 use crate::telemetry::packets::*;
 use crate::telemetry::parser::{parse_packet, ParseError};
+use crate::telemetry::broadcaster::get_session_manager;
 use crate::commands::set_detected_source_ip;
 use std::net::SocketAddr;
 use std::sync::{OnceLock, Mutex};
@@ -167,6 +168,8 @@ async fn receive_task(socket: UdpSocket, tx: TelemetryTx) {
                                 source_ip: addr.ip().to_string(),
                                 source_port: addr.port(),
                             });
+                            // Notify the session manager so parser/broadcaster state resets on game change
+                            get_session_manager().set_active_game(detection.game_id);
                             info!("Detected game: {} from {}:{}", game_name_for_log, addr.ip(), addr.port());
                         }
                     }

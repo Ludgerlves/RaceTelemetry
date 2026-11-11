@@ -387,6 +387,23 @@ export function useTelemetry() {
                     break;
                 }
 
+                case 'GameDetected': {
+                    const data = payload.data as any;
+                    // Game changed — reset frontend session state so the new game starts clean
+                    updateSession({
+                        activeGame: data.game_id ?? null,
+                        sessionUid: 0,
+                        isNewSession: true,
+                        lapHistory: [],
+                        bestLapTime: Infinity,
+                        currentLap: 0,
+                        lastLapTime: 0,
+                        sectorTimes: [0, 0, 0],
+                        bestSectorTimes: [0, 0, 0],
+                    });
+                    break;
+                }
+
                 case 'SourceIpDetected': {
                     const data = payload.data as any;
                     setSourceIp(data.ip, data.port);

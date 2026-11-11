@@ -1,6 +1,7 @@
 //! Broadcaster for telemetry events
 //! Handles emitting events to the frontend via Tauri
 
+use crate::telemetry::game_detection::GameId;
 use crate::telemetry::packets::{TelemetryEvent, CarTelemetryData, CarStatusData, PacketHeader, LapData, MAX_CARS};
 use crate::telemetry::persistence;
 use std::collections::VecDeque;
@@ -29,6 +30,7 @@ pub struct SessionState {
     pub player_car_index: u8,
     pub active_driver_index: u8,
     pub num_active_cars: u8,
+    pub active_game: Option<GameId>,
     pub session_started_at: Option<i64>,
     pub participants: Vec<ParticipantInfo>,
     pub current_lap: u8,
@@ -227,6 +229,38 @@ impl SessionManager {
     pub fn set_active_driver(&self, index: u8) {
         let mut state = self.state.lock().unwrap();
         state.active_driver_index = index;
+        drop(state);
+        self.emit_session_state();
+    }
+
+    /// Set the currently active game. When the game changes, reset the parser/broadcaster
+    /// state (lap history, best lap, current lap, session uid) so telemetry from a different
+    /// game is not misinterpreted as a continuation of the previous game's session.
+    pub fn set_active_game(&self, game_id: GameId) {
+        let mut state = self.state.lock().unwrap();
+
+        if state.active_game != Some(game_id) {
+            // Game changed — reset session-scoped state so the new game starts clean.
+            if state.active_game.is_some() && state.session_started_at.is_some() {
+                let previous = state.clone();
+                drop(state);
+                let _ = persistence::persist_current_session(
+                    &previous,
+                    previous.session_started_at.unwrap(),
+                );
+                state = self.state.lock().unwrap();
+            }
+
+            state.active_game = Some(game_id);
+            state.session_uid = 0;
+            state.is_new_session = true;
+            state.lap_history.clear();
+            state.best_lap_time = u32::MAX;
+            state.current_lap = 0;
+            state.session_started_at = Some(Utc::now().timestamp_millis());
+            info!("Game changed to {:?}: session state reset", game_id);
+        }
+
         drop(state);
         self.emit_session_state();
     }

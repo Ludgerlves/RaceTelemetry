@@ -13,7 +13,7 @@ use std::path::PathBuf;
 /// Directory used for all persisted session data.
 pub fn sessions_dir() -> PathBuf {
     let mut path = dirs::data_dir().unwrap_or_else(|| PathBuf::from("."));
-    path.push("f1-telemetry");
+    path.push("race-telemetry");
     path.push("sessions");
     let _ = fs::create_dir_all(&path);
     path

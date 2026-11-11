@@ -107,6 +107,7 @@ export const useTelemetryStore = create<TelemetryState>((set) => ({
         lapHistory: [],
         isNewSession: true,
         activeDriverIndex: 0,
+        activeGame: null,
         sessionStartedAt: null,
     },
 

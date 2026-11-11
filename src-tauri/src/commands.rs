@@ -1,6 +1,7 @@
 use tauri::AppHandle;
 use crate::telemetry::udp_listener;
 use crate::telemetry::broadcaster::get_session_manager;
+use crate::telemetry::ac_shared_memory;
 use crate::telemetry::persistence;
 use std::sync::Mutex;
 use std::time::Duration;
@@ -375,4 +376,37 @@ pub fn get_detected_source_ip() -> SourceIpResponse {
 #[tauri::command]
 pub fn get_local_ips() -> Vec<String> {
     udp_listener::get_local_ips()
+}
+
+/// Command to start Assetto Corsa shared memory reader
+#[tauri::command]
+pub async fn start_shared_memory(app_handle: tauri::AppHandle) -> Result<String, String> {
+    match ac_shared_memory::start_shared_memory(app_handle) {
+        Ok(()) => {
+            info!("Assetto Corsa shared memory reader started.");
+            Ok("Assetto Corsa shared memory reader running.".into())
+        }
+        Err(e) => {
+            error!("Failed to start Assetto Corsa shared memory reader: {}", e);
+            Err(format!("Failed to start shared memory reader: {}", e))
+        }
+    }
+}
+
+/// Command to stop Assetto Corsa shared memory reader
+#[tauri::command]
+pub fn stop_shared_memory() -> Result<String, String> {
+    let stopped = ac_shared_memory::stop_shared_memory();
+    if stopped {
+        info!("Assetto Corsa shared memory reader stopped.");
+        Ok("Assetto Corsa shared memory reader stopped.".into())
+    } else {
+        Ok("Assetto Corsa shared memory reader was not running.".into())
+    }
+}
+
+/// Command to check if Assetto Corsa shared memory reader is running
+#[tauri::command]
+pub fn is_shared_memory_running() -> bool {
+    ac_shared_memory::is_shared_memory_running()
 }

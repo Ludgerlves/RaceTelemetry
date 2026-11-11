@@ -718,28 +718,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "f1-telemetry"
-version = "0.1.0"
-dependencies = [
- "bitflags 2.13.2",
- "bytes",
- "chrono",
- "dirs 5.0.1",
- "local-ip-address",
- "nom",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-dialog",
- "thiserror 1.0.69",
- "tokio",
- "tracing",
- "tracing-subscriber",
- "uuid",
-]
-
-[[package]]
 name = "fastrand"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2430,6 +2408,29 @@ name = "r-efi"
 version = "6.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8dcc9c7d52a811697d2151c701e0d08956f92b0e24136cf4cf27b57a6a0d9bf"
+
+[[package]]
+name = "race-telemetry"
+version = "0.1.0"
+dependencies = [
+ "bitflags 2.13.2",
+ "bytes",
+ "chrono",
+ "dirs 5.0.1",
+ "local-ip-address",
+ "nom",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-dialog",
+ "thiserror 1.0.69",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+ "uuid",
+ "winapi",
+]
 
 [[package]]
 name = "raw-window-handle"
