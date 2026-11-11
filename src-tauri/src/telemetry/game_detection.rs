@@ -146,7 +146,7 @@ impl GameAdapter for AssettoCorsaCompetizioneAdapter {
         "Assetto Corsa Competizione"
     }
 
-    fn can_handle(&self, buf: &[u8]) -> bool {
+    fn can_handle(&self, _buf: &[u8]) -> bool {
         // ACC uses shared memory, not UDP
         false
     }
@@ -172,7 +172,7 @@ impl GameAdapter for AssettoCorsaEvoAdapter {
         "Assetto C Corsa Evo"
     }
 
-    fn can_handle(&self, buf: &[u8]) -> bool {
+    fn can_handle(&self, _buf: &[u8]) -> bool {
         false
     }
 

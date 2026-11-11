@@ -160,13 +160,14 @@ async fn receive_task(socket: UdpSocket, tx: TelemetryTx) {
                             last_detected_game = Some(detection.game_id);
                             let adapter = registry.get_adapter(detection.game_id);
                             let game_name = adapter.map(|a| a.display_name().to_string()).unwrap_or_else(|| detection.game_id.as_str().to_string());
+                            let game_name_for_log = game_name.clone();
                             let _ = tx.send(TelemetryEvent::GameDetected {
                                 game_id: detection.game_id.as_str().to_string(),
                                 game_name,
                                 source_ip: addr.ip().to_string(),
                                 source_port: addr.port(),
                             });
-                            info!("Detected game: {} from {}:{}", game_name, addr.ip(), addr.port());
+                            info!("Detected game: {} from {}:{}", game_name_for_log, addr.ip(), addr.port());
                         }
                     }
                 }
