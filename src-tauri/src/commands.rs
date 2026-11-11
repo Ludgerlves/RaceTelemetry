@@ -33,6 +33,13 @@ pub struct Settings {
     target_port: u16,
     #[serde(rename = "enableForwarding")]
     enable_forwarding: bool,
+    // Assetto Corsa / ACC (Windows shared memory)
+    #[serde(rename = "acShmEnabled")]
+    ac_shm_enabled: bool,
+    #[serde(rename = "acShmPath")]
+    ac_shm_path: String,
+    #[serde(rename = "cmConnection")]
+    cm_connection: String,
 }
 
 impl Default for Settings {
@@ -47,6 +54,9 @@ impl Default for Settings {
             target_ip: "".to_string(),
             target_port: 20777,
             enable_forwarding: false,
+            ac_shm_enabled: false,
+            ac_shm_path: "".to_string(),
+            cm_connection: "".to_string(),
         }
     }
 }

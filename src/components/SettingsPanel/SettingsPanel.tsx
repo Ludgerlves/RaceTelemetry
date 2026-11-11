@@ -13,6 +13,10 @@ interface Settings {
   targetIp: string;
   targetPort: number;
   enableForwarding: boolean;
+  // Assetto Corsa / ACC (Windows shared memory)
+  acShmEnabled: boolean;
+  acShmPath: string;
+  cmConnection: string;
 }
 
 interface SaveSettingsResult {
@@ -38,6 +42,9 @@ const defaultSettings: Settings = {
   targetIp: '',
   targetPort: 20777,
   enableForwarding: false,
+  acShmEnabled: false,
+  acShmPath: '',
+  cmConnection: '',
 };
 
 const SettingsPanel: React.FC = () => {
@@ -153,9 +160,14 @@ const SettingsPanel: React.FC = () => {
       </div>
       <div className="f1-card__body">
 
-        {/* Network Settings */}
+        {/* ===== F1 2025 ===== */}
         <div className="f1-settings-group">
-          <div className="f1-settings-group-title">Network</div>
+          <div className="f1-settings-group-title">
+            F1 2025 Telemetry
+            <span style={{ fontSize: '11px', fontWeight: 'normal', color: 'var(--f1-white-muted)', marginLeft: 'var(--gap-sm)' }}>
+              (UDP · port 20777)
+            </span>
+          </div>
           <div className="f1-settings-grid">
             <div className="f1-setting">
               <div className="f1-setting-label">UDP Port</div>
@@ -167,6 +179,7 @@ const SettingsPanel: React.FC = () => {
                 min={1024}
                 max={65535}
               />
+              <p className="f1-setting-hint">Port the app listens on. Must match the F1 25 game telemetry target port.</p>
             </div>
             <div className="f1-setting">
               <div className="f1-setting-label">Connection</div>
@@ -183,6 +196,7 @@ const SettingsPanel: React.FC = () => {
                   {isTestingConnection ? 'Testing...' : 'Test Connection'}
                 </button>
               </div>
+              <p className="f1-setting-hint">Tests the UDP listener on the configured port.</p>
             </div>
             {connectionTestResult && (
               <div className="f1-setting" style={{ gridColumn: '1 / -1' }}>
@@ -214,71 +228,10 @@ const SettingsPanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Machine IP Configuration */}
         <div className="f1-settings-group">
-          <div className="f1-settings-group-title">
-            Machine IP Configuration
-            <span style={{ fontSize: '11px', fontWeight: 'normal', color: 'var(--f1-white-muted)', marginLeft: 'var(--gap-sm)' }}>
-              (Optional: Data Forwarding)
-            </span>
-          </div>
-          <p className="f1-setting-hint" style={{ marginBottom: 'var(--gap-md)' }}>
-            Source IP Override is for manual PS5 IP entry. Forwarding fields below are only needed if sending telemetry to another machine.
-          </p>
-          <div className="f1-settings-grid">
-            <div className="f1-setting">
-              <div className="f1-setting-label">Source IP Override</div>
-              <input
-                type="text"
-                className="f1-input"
-                placeholder="Auto-detected (leave empty)"
-                value={settings.sourceIpOverride}
-                onChange={(e) => handleChange('sourceIpOverride', e.target.value)}
-              />
-              <p className="f1-setting-hint">Manually specify F1 game IP. Leave empty for auto-detection.</p>
-            </div>
-            <div className="f1-setting">
-              <div className="f1-setting-label">Target IP (Forwarding)</div>
-              <input
-                type="text"
-                className="f1-input"
-                placeholder="192.168.1.xxx"
-                value={settings.targetIp}
-                onChange={(e) => handleChange('targetIp', e.target.value)}
-              />
-              <p className="f1-setting-hint">Optional: IP to forward telemetry data to. Leave empty for local-only.</p>
-            </div>
-            <div className="f1-setting">
-              <div className="f1-setting-label">Target Port (Forwarding)</div>
-              <input
-                type="number"
-                className="f1-input"
-                value={settings.targetPort}
-                onChange={(e) => handleChange('targetPort', parseInt(e.target.value) || 20777)}
-                min={1024}
-                max={65535}
-              />
-              <p className="f1-setting-hint">Optional: Port for forwarding. Default 20777.</p>
-            </div>
-            <div className="f1-setting">
-              <label className="f1-checkbox">
-                <input
-                  type="checkbox"
-                  checked={settings.enableForwarding}
-                  onChange={(e) => handleChange('enableForwarding', e.target.checked)}
-                />
-                <span>Enable Data Forwarding (Optional)</span>
-              </label>
-              <p className="f1-setting-hint">Only enable if forwarding to another machine. Data stays local by default.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* F1 Game Telemetry Configuration */}
-        <div className="f1-settings-group">
-          <div className="f1-settings-group-title">F1 Game Telemetry Setup</div>
+          <div className="f1-settings-group-title">F1 Game Setup (in-game)</div>
           <p className="f1-setting-hint">
-            Configure these values in the F1 25 game: <strong>Settings → Telemetry Settings → UDP Telemetry</strong>
+            Configure these values in F1 25: <strong>Settings → Telemetry Settings → UDP Telemetry</strong>
           </p>
 
           {/* Detected Source IP */}
@@ -354,14 +307,62 @@ const SettingsPanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Display Settings */}
+        {/* ===== Assetto Corsa / ACC ===== */}
+        <div className="f1-settings-group">
+          <div className="f1-settings-group-title">
+            Assetto Corsa / ACC
+            <span style={{ fontSize: '11px', fontWeight: 'normal', color: 'var(--f1-white-muted)', marginLeft: 'var(--gap-sm)' }}>
+              (Windows shared memory)
+            </span>
+          </div>
+          <div className="f1-settings-grid">
+            <div className="f1-setting">
+              <label className="f1-checkbox">
+                <input
+                  type="checkbox"
+                  checked={settings.acShmEnabled}
+                  onChange={(e) => handleChange('acShmEnabled', e.target.checked)}
+                />
+                <span>Enable shared memory reader</span>
+              </label>
+              <p className="f1-setting-hint">Reads AC/ACC physics &amp; graphics data via Windows shared memory sections (acpmf_physics / acpmf_graphics / acpmf_static).</p>
+            </div>
+            <div className="f1-setting">
+              <div className="f1-setting-label">Shared Memory Path</div>
+              <input
+                type="text"
+                className="f1-input"
+                placeholder="Local\acpmf_physics"
+                value={settings.acShmPath}
+                onChange={(e) => handleChange('acShmPath', e.target.value)}
+              />
+              <p className="f1-setting-hint">Leave empty for default Content Manager path.</p>
+            </div>
+            <div className="f1-setting" style={{ gridColumn: '1 / -1' }}>
+              <div className="f1-setting-label">Content Manager Connection</div>
+              <input
+                type="text"
+                className="f1-input"
+                placeholder="http://localhost:8080"
+                value={settings.cmConnection}
+                onChange={(e) => handleChange('cmConnection', e.target.value)}
+              />
+              <p className="f1-setting-hint">Content Manager HTTP address (optional). Used to read the active session and car info when AC/ACC is launched via Content Manager.</p>
+            </div>
+          </div>
+          <p className="f1-setting-hint" style={{ fontSize: '12px', color: 'var(--f1-white-muted)', marginTop: 'var(--gap-xs)' }}>
+            <strong>Note:</strong> Shared memory is Windows-only. On macOS/Linux this reader is a no-op stub.
+          </p>
+        </div>
+
+        {/* ===== Display ===== */}
         <div className="f1-settings-group">
           <div className="f1-settings-group-title">Display</div>
           <div className="f1-settings-grid">
             <div className="f1-setting">
               <div className="f1-setting-label">Units</div>
               <select className="f1-select" value={settings.units} onChange={(e) => handleChange('units', e.target.value as 'metric' | 'imperial')}>
-                <option value="metric">Metric (km/h, °C, kg, PSI)</option>
+                <option value="metric">Metric (km/h, °C, kg, bar)</option>
                 <option value="imperial">Imperial (mph, °F, lbs, PSI)</option>
               </select>
             </div>
@@ -375,7 +376,7 @@ const SettingsPanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Logging Settings */}
+        {/* ===== Logging ===== */}
         <div className="f1-settings-group">
           <div className="f1-settings-group-title">Logging</div>
           <div className="f1-settings-grid">
@@ -391,7 +392,7 @@ const SettingsPanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Data Export */}
+        {/* ===== Data Export ===== */}
         <div className="f1-settings-group">
           <div className="f1-settings-group-title">Data Export</div>
           <div className="f1-settings-actions">
@@ -407,7 +408,7 @@ const SettingsPanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Save/Reset */}
+        {/* ===== Save / Reset ===== */}
         <div className="f1-settings-actions">
           <button className="f1-btn f1-btn--secondary" onClick={handleReset} disabled={saveStatus === 'saving'}>
             Reset Defaults

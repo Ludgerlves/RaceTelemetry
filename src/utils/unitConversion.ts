@@ -61,12 +61,13 @@ export const convertFuel = (kg: number, units: UnitSystem) => {
 };
 
 /**
- * Formata um valor de pressão. O SettingsPanel lista PSI para ambos,
- * então mantemos PSI e apenas exibimos o valor bruto com o rótulo adequado.
+ * Formata um valor de pressão conforme o sistema de unidades.
+ * imperial → PSI (valor bruto)
+ * metric   → bar (convertido de PSI)
  */
 export const formatPressure = (psi: number, units: UnitSystem) => {
     if (units === 'imperial') {
         return { value: psi, unit: 'PSI' as const };
     }
-    return { value: psi, unit: 'PSI' as const };
+    return { value: psiToBar(psi), unit: 'bar' as const };
 };

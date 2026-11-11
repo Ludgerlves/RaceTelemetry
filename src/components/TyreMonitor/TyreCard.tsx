@@ -1,6 +1,6 @@
 // src/components/TyreMonitor/TyreCard.tsx
 import React from 'react';
-import { convertTemperature } from '../../utils/unitConversion';
+import { convertTemperature, formatPressure } from '../../utils/unitConversion';
 import '../../styles/f1-theme.css';
 
 interface TyreCardProps {
@@ -103,7 +103,10 @@ const TyreCard: React.FC<TyreCardProps> = ({
                 <div style={{ textAlign: 'center' }}>
                     <div className="label">PRESSURE</div>
                     <div className="value" style={{ fontSize: '18px' }}>
-                        {pressure.toFixed(1)} PSI
+                        {(() => {
+                            const { value: p, unit: pu } = formatPressure(pressure, units);
+                            return `${p.toFixed(1)} ${pu}`;
+                        })()}
                     </div>
                 </div>
                 <div style={{ textAlign: 'center' }}>

@@ -116,7 +116,7 @@ Configurable options:
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| `udpPort` | `20777` | UDP listen port |
+| `udpPort` | `20777` | UDP listen port (F1 25) |
 | `units` | `metric` | `metric` or `imperial` |
 | `theme` | `f1-dark` | UI theme |
 | `autoConnect` | `true` | Auto-start UDP listener on launch |
@@ -125,6 +125,27 @@ Configurable options:
 | `targetIp` | `""` | Forwarding target IP |
 | `targetPort` | `20777` | Forwarding target port |
 | `enableForwarding` | `false` | Enable UDP packet forwarding |
+| `acShmEnabled` | `false` | Enable AC/ACC shared memory reader (Windows) |
+| `acShmPath` | `""` | Shared memory section path (Content Manager default) |
+| `cmConnection` | `""` | Content Manager HTTP address (optional) |
+
+### Assetto Corsa / ACC (Windows shared memory)
+
+The app can read AC/ACC telemetry via Windows shared memory sections instead of UDP:
+
+| Section | Rate | Contents |
+|---------|------|----------|
+| `Local\acpmf_physics` | ~300 Hz | Physics (speed, RPM, gear, suspension, tyres, …) |
+| `Local\acpmf_graphics` | ~60 Hz | Graphics (car position, lap, session, …) |
+| `Local\acpmf_static` | Once | Static car/track info |
+
+**To use:**
+1. Launch AC or ACC through **Content Manager**.
+2. In the app Settings → Assetto Corsa / ACC, enable **shared memory reader**.
+3. Optionally set the **Content Manager Connection** HTTP address (e.g. `http://localhost:8080`) so the app can read the active session/car from Content Manager.
+4. Shared memory path defaults to `Local\acpmf_*`; change **Shared Memory Path** only if you use a custom layout.
+
+> **Note:** Shared memory is Windows-only. On macOS/Linux the reader is a compile-safe stub that logs a warning and does nothing.
 
 Sessions are stored as JSON files under:
 

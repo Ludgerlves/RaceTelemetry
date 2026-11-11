@@ -76,7 +76,7 @@ const TyreSetsPanel: React.FC = () => {
                                     <div>{s.lapsDone}/{s.lifeSpan}</div>
                                 </div>
                                 <div>
-                                    <div style={{ fontSize: '10px', color: '#666' }}>Pressure</div>
+                                    <div style={{ fontSize: '10px', color: '#666' }}>Laps Left</div>
                                     <div>{s.usableLife}</div>
                                 </div>
                                 <div>
